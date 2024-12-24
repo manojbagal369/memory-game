@@ -1,15 +1,25 @@
+/* Global Reset */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+/* Body */
 body {
   background-color: #f4c531;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
+/* Wrapper */
 .wrapper {
   box-sizing: content-box;
-  width: 34em;
+  width: 90%;
+  max-width: 34em;
   padding: 2.5em 3em;
   background-color: #ffffff;
   position: absolute;
@@ -19,14 +29,25 @@ body {
   border-radius: 0.6em;
   box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
 }
-#moves-count {
-  font-weight: bold;
-  font-size: 1.5em;
-}
+
+/* Game Stats */
+#moves-count,
 #time {
   font-weight: bold;
   font-size: 1.5em;
+  margin: 0.5em 0;
 }
+
+.stats-container {
+  text-align: right;
+  margin-bottom: 1.2em;
+}
+
+.stats-container span {
+  font-weight: 600;
+}
+
+/* Game Container */
 .game-container {
   position: relative;
   width: 100%;
@@ -35,21 +56,17 @@ body {
   grid-template-columns: repeat(
     auto-fit,
     minmax(6.25em, 1fr)
-  ); /* Adjust to fit the cards dynamically */
+  ); /* Auto-adjust card size */
 }
-.stats-container {
-  text-align: right;
-  margin-bottom: 1.2em;
-}
-.stats-container span {
-  font-weight: 600;
-}
+
+/* Card Container */
 .card-container {
   position: relative;
   width: 8em;
   height: 8em;
   cursor: pointer;
 }
+
 .card-before,
 .card-after {
   position: absolute;
@@ -63,26 +80,33 @@ body {
   transition: transform 0.7s ease-out;
   backface-visibility: hidden;
 }
+
 .card-before {
   background-color: #f4c531;
   font-size: 2.8em;
   font-weight: 600;
 }
+
 .card-after {
   background-color: #ffffff;
   transform: rotateY(180deg);
 }
+
 .card-after img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fits the container without distortion */
+  object-fit: cover; /* Ensure images fit container */
 }
+
 .card-container.flipped .card-before {
   transform: rotateY(180deg);
 }
+
 .card-container.flipped .card-after {
   transform: rotateY(0deg);
 }
+
+/* Controls Container */
 .controls-container {
   position: absolute;
   display: flex;
@@ -92,21 +116,23 @@ body {
   width: 100%;
   height: 100%;
   background-color: #f4c531;
-
   top: 0;
   text-align: center;
 }
+
 .game-name {
   font-weight: bold;
   margin-bottom: 1em;
   font-size: 3em;
 }
+
 button {
   border: none;
   border-radius: 0.3em;
   padding: 1em 1.5em;
   cursor: pointer;
 }
+
 #stop {
   font-size: 1.1em;
   display: block;
@@ -115,30 +141,38 @@ button {
   color: #ffffff;
   font-weight: bold;
 }
+
 .controls-container button {
   font-size: 1.3em;
   box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
 }
+
 .hide {
   display: none;
 }
 
+/* Leaderboard */
 #leaderboard {
   margin-top: 2em;
   text-align: center;
 }
+
 #leaderboard h2 {
   font-size: 2.5em;
   margin-bottom: 1em;
 }
+
 #leaderboard-list {
   list-style: none;
   padding: 0;
 }
+
 #leaderboard-list li {
   font-size: 1.3em;
   margin: 0.5em 0;
 }
+
+/* Player Input */
 #player-name {
   margin-bottom: 1em;
   padding: 0.5em;
@@ -146,6 +180,8 @@ button {
   border-radius: 10px;
   font-weight: bold;
 }
+
+/* Start Button */
 #start {
   padding: 0.5em 1em;
   font-size: 1.2em;
@@ -155,13 +191,17 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* Result Section */
 #result {
   text-align: center;
 }
+
 #result h4 {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
+
 #result h2 {
   font-size: 2.5em;
   margin-bottom: 1em;
@@ -179,4 +219,190 @@ button {
 
 #result li strong {
   font-weight: 700;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large Devices (Desktops) */
+@media (min-width: 1025px) {
+  .game-name {
+    font-size: 3.5em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  }
+
+  .card-container {
+    width: 8em;
+    height: 8em;
+  }
+
+  .controls-container {
+    font-size: 1.5em;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .game-name {
+    font-size: 3em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr));
+  }
+
+  .card-container {
+    width: 7em;
+    height: 7em;
+  }
+
+  #start {
+    padding: 0.7em 1.3em;
+  }
+
+  #stop {
+    font-size: 1.2em;
+  }
+
+  #leaderboard h2 {
+    font-size: 2.5em;
+  }
+
+  #leaderboard-list li {
+    font-size: 1.2em;
+  }
+}
+
+/* Small Devices (Mobile - Portrait) */
+@media (max-width: 650px) {
+  .game-name {
+    font-size: 2.5em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+  }
+
+  .card-container {
+    width: 6.5em;
+    height: 6.5em;
+  }
+
+  #start {
+    padding: 0.6em 1.2em;
+    font-size: 1.1em;
+  }
+
+  #stop {
+    font-size: 1.1em;
+  }
+
+  #leaderboard h2 {
+    font-size: 2.2em;
+  }
+
+  #leaderboard-list li {
+    font-size: 1.1em;
+  }
+}
+
+/* Very Small Devices (Mobile - Portrait) */
+@media (max-width: 550px) {
+  .game-name {
+    font-size: 2.2em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(5.5em, 1fr));
+  }
+
+  .card-container {
+    width: 5.5em;
+    height: 5.5em;
+  }
+
+  #start {
+    padding: 0.6em 1.1em;
+    font-size: 1em;
+  }
+
+  #stop {
+    font-size: 1em;
+  }
+
+  #leaderboard h2 {
+    font-size: 2em;
+  }
+
+  #leaderboard-list li {
+    font-size: 1.1em;
+  }
+}
+
+/* Small Devices (Mobile - Landscape) */
+@media (max-width: 480px) {
+  .game-name {
+    font-size: 2em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+  }
+
+  .card-container {
+    width: 5em;
+    height: 5em;
+  }
+
+  #start {
+    padding: 0.5em 1em;
+    font-size: 1em;
+  }
+
+  #stop {
+    font-size: 1em;
+  }
+
+  #leaderboard h2 {
+    font-size: 1.8em;
+  }
+
+  #leaderboard-list li {
+    font-size: 1em;
+  }
+}
+
+/* Extra Small Devices (Mobile - Landscape) */
+@media (max-width: 370px) {
+  .game-name {
+    font-size: 1.8em;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fit, minmax(4.5em, 1fr));
+  }
+
+  .card-container {
+    width: 4.5em;
+    height: 4.5em;
+  }
+
+  #start {
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+  }
+
+  #stop {
+    font-size: 0.9em;
+  }
+
+  #leaderboard h2 {
+    font-size: 1.6em;
+  }
+
+  #leaderboard-list li {
+    font-size: 1em;
+  }
 }
