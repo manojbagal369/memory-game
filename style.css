@@ -277,6 +277,10 @@ button {
 
 /* Small Devices (Mobile - Portrait) */
 @media (max-width: 650px) {
+  .wrapper {
+    width: 80%;
+  }
+
   .game-name {
     font-size: 2.5em;
   }
@@ -376,6 +380,10 @@ button {
 
 /* Extra Small Devices (Mobile - Landscape) */
 @media (max-width: 370px) {
+  .wrapper {
+    width: 90%;
+  }
+
   .game-name {
     font-size: 1.8em;
   }
