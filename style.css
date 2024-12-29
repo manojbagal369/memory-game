@@ -18,7 +18,7 @@ body {
 /* Wrapper */
 .wrapper {
   box-sizing: content-box;
-  width: 90%;
+  width: 100%;
   max-width: 34em;
   padding: 2.5em 3em;
   background-color: #ffffff;
@@ -224,7 +224,7 @@ button {
 /* Media Queries for Responsiveness */
 
 /* Large Devices (Desktops) */
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
   .game-name {
     font-size: 3.5em;
   }
@@ -241,7 +241,7 @@ button {
   .controls-container {
     font-size: 1.5em;
   }
-}
+} */
 
 /* Medium Devices (Tablets) */
 @media (max-width: 1024px) {
@@ -278,7 +278,7 @@ button {
 /* Small Devices (Mobile - Portrait) */
 @media (max-width: 650px) {
   .wrapper {
-    width: 80%;
+    width: 78%;
   }
 
   .game-name {
@@ -326,6 +326,10 @@ button {
     width: 5.5em;
     height: 5.5em;
   }
+  .card-before,
+  .card-after {
+    border: 1px solid black;
+  }
 
   #start {
     padding: 0.6em 1.1em;
@@ -347,8 +351,12 @@ button {
 
 /* Small Devices (Mobile - Landscape) */
 @media (max-width: 480px) {
+<<<<<<< HEAD
+  .wrapper {
+=======
 
    .wrapper {
+>>>>>>> b98563be565af847cfbd4e90117b6ae6b9dbac2d
     width: 80%;
   }
   .game-name {
@@ -362,6 +370,11 @@ button {
   .card-container {
     width: 5em;
     height: 5em;
+  }
+
+  .card-before,
+  .card-after {
+    border: 1px solid black;
   }
 
   #start {
@@ -400,7 +413,10 @@ button {
     width: 4.5em;
     height: 4.5em;
   }
-
+  .card-before,
+  .card-after {
+    border: 1px solid black;
+  }
   #start {
     padding: 0.4em 0.8em;
     font-size: 0.9em;
