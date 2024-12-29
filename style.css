@@ -347,6 +347,10 @@ button {
 
 /* Small Devices (Mobile - Landscape) */
 @media (max-width: 480px) {
+
+   .wrapper {
+    width: 80%;
+  }
   .game-name {
     font-size: 2em;
   }
@@ -379,9 +383,9 @@ button {
 }
 
 /* Extra Small Devices (Mobile - Landscape) */
-@media (max-width: 370px) {
+@media (max-width: 395px) {
   .wrapper {
-    width: 90%;
+    width: 80%;
   }
 
   .game-name {
