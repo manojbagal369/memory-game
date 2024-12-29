@@ -278,7 +278,7 @@ button {
 /* Small Devices (Mobile - Portrait) */
 @media (max-width: 650px) {
   .wrapper {
-    width: 80%;
+    width: 78%;
   }
 
   .game-name {
