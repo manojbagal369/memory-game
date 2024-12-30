@@ -391,9 +391,9 @@ button {
 }
 
 /* Extra Small Devices (Mobile - Landscape) */
-@media (max-width: 395px) {
+@media (max-width: 370px) {
   .wrapper {
-    width: 80%;
+    width: 90%;
   }
 
   .game-name {
