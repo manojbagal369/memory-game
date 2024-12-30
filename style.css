@@ -391,7 +391,7 @@ button {
 }
 
 /* Extra Small Devices (Mobile - Landscape) */
-@media (max-width: 370px) {
+@media (max-width: 395px) {
   .wrapper {
     width: 90%;
   }
